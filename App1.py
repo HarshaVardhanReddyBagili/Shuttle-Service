@@ -18,7 +18,7 @@ if uploaded_file is not None:
     data
     g = nx.karate_club_graph()
     g = nx.from_pandas_edgelist(data, 'Origin', 'Destination', edge_attr=['Route', 'Distance_meters','Duration_min_minutes'] #Use the Graph API to create an empty network graph object
-
+    
     partition = nx_comm.louvain_communities(g)
 
     color_map = []
