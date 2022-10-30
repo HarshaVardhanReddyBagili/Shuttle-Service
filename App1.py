@@ -49,7 +49,7 @@ if uploaded_file is not None:
     st.pyplot(fig)
     plt.title('Louvain_communities algorithm', fontdict={'fontsize': 40}
   
-    if st.button("Click to Partition: "):
+     if st.button("Click to Partition: ") :
          st.write(partition, len(partition))
     #########################################
     st.info("Louvain_community Partition Graph")
