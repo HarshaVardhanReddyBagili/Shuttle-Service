@@ -46,9 +46,10 @@ if uploaded_file is not None:
                     style = "--", 
                     node_color = color_map,
                     font_size = 15)
+    st.pyplot(fig)
     plt.title('Louvain_communities algorithm', fontdict={'fontsize': 40}
     
-     st.pyplot(fig)
+    
 
     if st.button("Click to Partition: "):
         st.write(partition, len(partition))
