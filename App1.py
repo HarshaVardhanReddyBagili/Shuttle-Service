@@ -5,8 +5,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import networkx.algorithms.community as nx_comm
-from community import community_louvain
-import openpyxl
+#from community import community_louvain
 
 st.title('Shuttle services - Optimal traffic routes prediction')
 st.markdown('Karate Club Graph')
@@ -17,12 +16,13 @@ if uploaded_file is not None:
     data = pd.read_excel(uploaded_file)
     data
     g = nx.karate_club_graph()
-    g = nx.from_pandas_edgelist(data, 'Origin', 'Destination', edge_attr=['Route', 'Distance_meters','Duration_min_minutes'] #Use the Graph API to create an empty network graph object
-    
+    g = nx.from_pandas_edgelist(data, source = "Origin", target = "Destination", edge_attr=['Distance_meters','Duration_minutes','Duration_min_minutes','Duration_max_minutes'])#Use the Graph API to create an empty network graph object
+
     partition = nx_comm.louvain_communities(g)
 
+
     color_map = []
-    # color the nodes in partition
+    # color the nodes according to their partition
     for node in g:
         if node in partition[0]:
             color_map.append('red')
@@ -38,15 +38,21 @@ if uploaded_file is not None:
     pos = nx.spring_layout(g)
 
 
-    nx.draw_networkx(g, pos, partition, with_labels=True, node_size = 250, node_shape = "s", edge_color = "k", style = "--", node_color = color_map, font_size = 15)
-    plt.title('Louvain_communities algorithm', fontdict={'fontsize': 40})
-
+    nx.draw_networkx(g, pos, partition, 
+                    with_labels=True, 
+                    node_size = 250, 
+                    node_shape = "s", 
+                    edge_color = "k", 
+                    style = "--", 
+                    node_color = color_map,
+                    font_size = 15)
+    plt.title('Louvain_communities algorithm', fontdict={'fontsize': 40}
     st.pyplot(fig)
 
-    if st.button("Click here for Partition: "):
+    if st.button("Click to Partition: "):
         st.write(partition, len(partition))
    
-    ###################################
+    #########################################
     st.info("Louvain_community Partition Graph")
 
     com = nx_comm.louvain_communities(g)
