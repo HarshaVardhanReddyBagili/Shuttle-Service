@@ -19,7 +19,8 @@ if uploaded_file is not None:
     g = nx.from_pandas_edgelist(data, source = "Origin", target = "Destination", edge_attr=['Distance_meters','Duration_minutes','Duration_min_minutes','Duration_max_minutes'])#Use the Graph API to create an empty network graph object
 
     partition = nx_comm.louvain_communities(g)
-
+    if st.button("Click to Partition: "):
+         st.write(partition, len(partition))
 
     color_map = []
     # color the nodes according to their partition
@@ -49,8 +50,7 @@ if uploaded_file is not None:
     st.pyplot(fig)
     plt.title('Louvain_communities algorithm', fontdict={'fontsize': 40}
   
-     if st.button("Click to Partition: ") :
-         st.write(partition, len(partition))
+
     #########################################
     st.info("Louvain_community Partition Graph")
 
