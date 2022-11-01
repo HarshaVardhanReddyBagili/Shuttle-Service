@@ -8,7 +8,6 @@ import networkx.algorithms.community as nx_comm
 #from community import community_louvain
 
 st.title('Shuttle Services - Optimal traffic routes prediction')
-st.markdown('Karate Club Graph')
 
 uploaded_file = st.file_uploader(" ", type=['xlsx']) #Only accepts excel file format
 
@@ -29,11 +28,13 @@ if uploaded_file is not None:
         if node in partition[0]:
             color_map.append('red')
         elif node in partition[1]:
-            color_map.append('green')
+            color_map.append('yellow')
         elif node in partition[2]:
             color_map.append('blue')
+        elif node in partition[3]:
+            color_map.append('purple')   
         else:
-            color_map.append('yellow')
+            color_map.append('green')
 
     
     fig, ax = plt.subplots(figsize = (30,15))
