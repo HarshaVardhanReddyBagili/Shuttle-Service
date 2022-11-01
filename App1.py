@@ -30,7 +30,7 @@ if uploaded_file is not None:
         elif node in partition[1]:
             color_map.append('yellow')
         elif node in partition[2]:
-            color_map.append('blue')
+            color_map.append('maroon')
         elif node in partition[3]:
             color_map.append('purple')
         elif node in partition[4]:
