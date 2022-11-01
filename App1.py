@@ -43,10 +43,8 @@ if uploaded_file is not None:
         else:
             color_map.append('green')
 
-    
     fig, ax = plt.subplots(figsize = (30,15))
     pos = nx.spring_layout(g)
-
 
     nx.draw_networkx(g, pos, partition, 
                     with_labels=True, 
@@ -58,13 +56,13 @@ if uploaded_file is not None:
                     font_size = 15)
     plt.title('Louvain_communities algorithm', fontdict={'fontsize': 40})
     st.pyplot(fig)
-    if st.button("Click here for Partition: "):
-         st.write(partition, len(partition))
+    
     #########################################
     st.info("louvain_community Partition Graph")
-
+    if st.button("Click here for Partition: "):
+         st.write(partition, len(partition))
+            
     com = nx_comm.louvain_communities(g)
-
     st.subheader("For louvain_communities")
     st.write("Modularity: ", nx_comm.modularity(g, com))
     st.write("Partition Quality: ", nx_comm.partition_quality(g, com))
