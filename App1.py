@@ -19,9 +19,6 @@ if uploaded_file is not None:
 
     partition = nx_comm.louvain_communities(g)
 
-    if st.button("Click here for Partition: "):
-        st.write(partition, len(partition))
-
     color_map = []
     # color the nodes according to their partition
     for node in g:
@@ -61,7 +58,8 @@ if uploaded_file is not None:
                     font_size = 15)
     plt.title('Louvain_communities algorithm', fontdict={'fontsize': 40})
     st.pyplot(fig)
-   
+    if st.button("Click here for Partition: "):
+         st.write(partition, len(partition))
     #########################################
     st.info("louvain_community Partition Graph")
 
