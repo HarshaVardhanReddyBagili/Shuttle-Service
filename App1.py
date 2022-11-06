@@ -65,7 +65,6 @@ if uploaded_file is not None:
     com = nx_comm.louvain_communities(g)
     st.subheader("For louvain_communities")
     st.write("Modularity: ", nx_comm.modularity(g, com))
-    st.write("Partition Quality: ", nx_comm.partition_quality(g, com))
     st.write("Coverage: ", nx_comm.coverage(g, com)) 
     st.write("Performance: ", nx_comm.performance(g, com))
 
