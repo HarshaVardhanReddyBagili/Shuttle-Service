@@ -18,7 +18,7 @@ if uploaded_file is not None:
     g = nx.from_pandas_edgelist(data, source = "Origin", target = "Destination", edge_attr=['Distance_meters','Route','Duration_min_minutes']) #Use the Graph API to create an empty network graph object
 
     partition = nx_comm.louvain_communities(g)
-
+    shortest_path = nx.shortest_path(g)
     color_map = []
     # color the nodes according to their partition
     for node in g:
