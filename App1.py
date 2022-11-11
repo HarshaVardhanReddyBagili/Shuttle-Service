@@ -12,6 +12,7 @@ html_temp = """
     <div style="background:#025246 ;padding:10px">
     <h2 style="color:white;text-align:center;"> Abalone Age Prediction ML App </h2>
     </div>
+    """
 uploaded_file = st.file_uploader(" ", type=['xlsx']) #Only accepts excel file format
 
 if uploaded_file is not None:     
