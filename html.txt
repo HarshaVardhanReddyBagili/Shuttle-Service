@@ -1,9 +1,0 @@
-<html>
-<body>
-
-<h1>Optimal Route Prediction For Shuttle Service</h1>
-
-<h2>at IT Corridor,Hyderabad </h2>
-
-</body>
-</html>
