@@ -10,7 +10,7 @@ import networkx.algorithms.community as nx_comm
 st.title('Shuttle Services - Optimal traffic routes prediction')
 html_temp = """
     <div style="background:#025246 ;padding:10px">
-    <h2 style="color:white;text-align:center;"> Abalone Age Prediction ML App </h2>
+    <h2 style="color:white;text-align:center;">Shuttle Services - Optimal traffic routes prediction </h2>
     </div>
     """
 uploaded_file = st.file_uploader(" ", type=['xlsx']) #Only accepts excel file format
