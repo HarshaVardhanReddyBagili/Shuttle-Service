@@ -6,11 +6,6 @@ import pandas as pd
 import numpy as np
 import networkx.algorithms.community as nx_comm
 #from community import community_louvain
- safe_html ="""  
-        <div style="background-color:#80ff80; padding:10px >
-        <h2 style="color:white;text-align:center;"> The Abalone is young</h2>
-        </div>
-        """
 safe_html =""" 
      <div style="background-color:powderblue;">
      <h1>Optimal Route Prediction For Shuttle Service</h1>
