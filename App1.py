@@ -6,17 +6,17 @@ import pandas as pd
 import numpy as np
 import networkx.algorithms.community as nx_comm
 #from community import community_louvain
-<html>
-<div>
-<body style="background-color:powderblue;">
-<body>
-
-<h1>Optimal Route Prediction For Shuttle Service</h1>
-
-<p>Findout the best route to reach your destination in less time</p>
-</body>
-</div>
-</html>
+ safe_html ="""  
+        <div style="background-color:#80ff80; padding:10px >
+        <h2 style="color:white;text-align:center;"> The Abalone is young</h2>
+        </div>
+        """
+safe_html =""" 
+     <div style="background-color:powderblue;">
+     <h1>Optimal Route Prediction For Shuttle Service</h1>
+     <p>Findout the best route to reach your destination in less time</p>
+     </div>
+     """
 st.title('Shuttle Services - Optimal traffic routes prediction')
 
 uploaded_file = st.file_uploader(" ", type=['xlsx']) #Only accepts excel file format
