@@ -6,14 +6,12 @@ import pandas as pd
 import numpy as np
 import networkx.algorithms.community as nx_comm
 #from community import community_louvain
-safe_html =""" 
-     <div style="background-color:powderblue;">
-     <h1>Optimal Route Prediction For Shuttle Service</h1>
-     <p>Findout the best route to reach your destination in less time</p>
-     </div>
-     """
-st.title('Shuttle Services - Optimal traffic routes prediction')
 
+st.title('Shuttle Services - Optimal traffic routes prediction')
+html_temp = """
+    <div style="background:#025246 ;padding:10px">
+    <h2 style="color:white;text-align:center;"> Abalone Age Prediction ML App </h2>
+    </div>
 uploaded_file = st.file_uploader(" ", type=['xlsx']) #Only accepts excel file format
 
 if uploaded_file is not None:     
