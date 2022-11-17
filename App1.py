@@ -57,13 +57,14 @@ if uploaded_file is not None:
     plt.title('Louvain_communities algorithm', fontdict={'fontsize': 40})
     st.pyplot(fig)
     df = data.loc[data.groupby(['Route']).Distance_meters.idxmin()]
-    Best_Route = df[["Origin", "Destination",'Route','Distance_meters']]
+    Best_Route = df[["Origin", "Destination",'Route','Distance_meters','Duration_minutes']]
     #########################################
     st.info("louvain_community Partition Graph")
     if st.button("Click here for Partition: "):
          st.write(partition, len(partition))
+    st.info("Best Route with less traffic")
     if st.button("click here for Best Route"):
-          st.write(df[["Origin", "Destination",'Route','Distance_meters']])
+          st.write(df[["Origin", "Destination",'Route','Distance_meters','Duration_minutes']])
     com = nx_comm.louvain_communities(g)
     st.subheader("For louvain_communities")
     st.write("Modularity: ", nx_comm.modularity(g, com))
