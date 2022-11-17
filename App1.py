@@ -74,4 +74,4 @@ if uploaded_file is not None:
     if st.button("Click to show edge betweeness centrality of graph"):
         edge_BC = nx.edge_betweenness_centrality(g)
         st.info(sorted(edge_BC.items(), key=lambda edge_BC : (edge_BC[1], edge_BC[0]), reverse = True))
-    st.info("In case of finding best route between any other new source & destination, please that datapoints to the dataset and reupload it. Thank you. ")
+    st.info("Upload the Outscraper dataset and get the best route between the source and destination.Thank you. ")
