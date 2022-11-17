@@ -13,8 +13,7 @@ uploaded_file = st.file_uploader(" ", type=['xlsx']) #Only accepts excel file fo
 
 if uploaded_file is not None:     
     data = pd.read_excel(uploaded_file)
-    df = data.loc[data.groupby(['Route']).Distance_meters.idxmin()]
-    Best_Route = df[["Origin", "Destination",'Route']]
+    data
     g = nx.karate_club_graph()
     g = nx.from_pandas_edgelist(data, source = "Origin", target = "Destination", edge_attr=['Distance_meters','Route','Duration_min_minutes']) #Use the Graph API to create an empty network graph object
 
@@ -57,13 +56,14 @@ if uploaded_file is not None:
                     font_size = 15)
     plt.title('Louvain_communities algorithm', fontdict={'fontsize': 40})
     st.pyplot(fig)
-    
+    df = data.loc[data.groupby(['Route']).Distance_meters.idxmin()]
+    Best_Route = df[["Origin", "Destination",'Route']]
     #########################################
     st.info("louvain_community Partition Graph")
     if st.button("Click here for Partition: "):
          st.write(partition, len(partition))
     if st.button("click here for Shortest Path"):
-          st.write(shortest_path,Best_Route)
+          st.write(shortest_path,df[["Origin", "Destination",'Route']])
     com = nx_comm.louvain_communities(g)
     st.subheader("For louvain_communities")
     st.write("Modularity: ", nx_comm.modularity(g, com))
