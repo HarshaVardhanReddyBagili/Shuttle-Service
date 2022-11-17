@@ -62,8 +62,8 @@ if uploaded_file is not None:
     st.info("louvain_community Partition Graph")
     if st.button("Click here for Partition: "):
          st.write(partition, len(partition))
-    if st.button("click here for Shortest Path"):
-          st.write(shortest_path,df[["Origin", "Destination",'Route']])
+    if st.button("click here for Best Route"):
+          st.write(df[["Origin", "Destination",'Route']])
     com = nx_comm.louvain_communities(g)
     st.subheader("For louvain_communities")
     st.write("Modularity: ", nx_comm.modularity(g, com))
