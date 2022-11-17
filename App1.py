@@ -62,7 +62,7 @@ if uploaded_file is not None:
     if st.button("Click here for Partition: "):
          st.write(partition, len(partition))
     if st.button("click here for Shortest Path"):
-          st.write(shortest_path,nx.shortest_path(g))
+          st.write(shortest_path,nx.shortest_path(g, data.Origin, data.Destination, weight=None, method='dijkstra'))
     com = nx_comm.louvain_communities(g)
     st.subheader("For louvain_communities")
     st.write("Modularity: ", nx_comm.modularity(g, com))
